@@ -1,0 +1,71 @@
+name: Deploy Docs to vrc.32ba.net
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout docs repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.14.0
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Docusaurus site
+        run: pnpm build
+
+      - name: Generate GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          owner: 32ba
+          repositories: vrc.32ba.net
+
+      - name: Checkout vrc.32ba.net repository
+        uses: actions/checkout@v4
+        with:
+          repository: 32ba/vrc.32ba.net
+          path: target-site
+          token: ${{ steps.app-token.outputs.token }}
+
+      - name: Sync generated site into target docs directory
+        run: |
+          rm -rf target-site/docs/*
+          mkdir -p target-site/docs
+          rsync -av --delete build/ target-site/docs/
+
+      - name: Commit and push changes
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+        run: |
+          cd target-site
+          if ! git diff --quiet; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add docs
+            git commit -m "chore: update docs from vrc-package-docs (${SOURCE_SHA::7})"
+            git push origin HEAD
+          else
+            echo "No changes to commit"
+          fi
