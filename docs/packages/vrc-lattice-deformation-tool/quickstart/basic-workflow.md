@@ -5,6 +5,8 @@ sidebar_position: 1
 
 ここでは `LatticeDeformer` をアバターに追加し、Scene ビューで制御点を編集して NDMF ビルドまで確認する最小構成の手順を解説します。想定所要時間は 15 分程度です。
 
+<iframe width="100%" style={{"aspect-ratio": "16 / 7"}} src="https://www.youtube.com/embed/OXLHyXd-FU8?si=zMSNblM5kWn3H7JE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 1. コンポーネントを追加
 1. Hierarchy で変形対象の Mesh がアタッチされた GameObject を選択します。
 2. Inspector の `コンポーネントを追加 (Add Component)` で `Lattice Deformer` を検索し追加します。
