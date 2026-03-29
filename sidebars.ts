@@ -44,6 +44,18 @@ const sidebars: SidebarsConfig = {
             },
             {
               type: 'category',
+              label: 'ガイド',
+              items: [
+                'packages/vrc-lattice-deformation-tool/guides/layers-and-groups',
+                'packages/vrc-lattice-deformation-tool/guides/brush-tool',
+                'packages/vrc-lattice-deformation-tool/guides/vertex-selection',
+                'packages/vrc-lattice-deformation-tool/guides/blendshape',
+                'packages/vrc-lattice-deformation-tool/guides/symmetry',
+                'packages/vrc-lattice-deformation-tool/guides/weight-transfer',
+              ],
+            },
+            {
+              type: 'category',
               label: 'トラブルシュート',
               items: [
                 'packages/vrc-lattice-deformation-tool/troubleshooting/common-issues',
