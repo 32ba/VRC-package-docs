@@ -15,7 +15,7 @@ export const Icon = ({name, alt}) => (
 2. `ブラシエディターを開く` でツールを起動した後、オーバーレイ上部のモード切替で <Icon name="vertex-select" /> `頂点選択` を選択します。
 
 {/* オーバーレイのモード切替部分。 <Icon name="brush" /> ブラシ と <Icon name="vertex-select" /> 頂点選択 のタブが見えるスクリーンショット */}
-![](../../../../static/img/packages/vrc-lattice-deformation-tool/vertex-panel.png)
+![](../../../../static/img/packages/vrc-lattice-deformation-tool/vertex-panel.webp)
 
 ## 頂点の選択
 
@@ -31,7 +31,7 @@ export const Icon = ({name, alt}) => (
 - <Icon name="connected" /> `接続のみ` をオンにすると、矩形選択がメッシュ接続された頂点のみに制限されます。
 
 {/* 頂点選択ツールで複数頂点が選択された状態のスクリーンショット。黄色 (選択) と青色 (未選択) の頂点、移動ハンドルが見える状態 */}
-![](../../../../static/img/packages/vrc-lattice-deformation-tool/vertex-multiselected.png)
+![](../../../../static/img/packages/vrc-lattice-deformation-tool/vertex-multiselected.webp)
 
 ## 変換モード
 
@@ -59,7 +59,7 @@ export const Icon = ({name, alt}) => (
 プロポーショナル編集を有効にすると、選択した頂点の周囲にある頂点も減衰カーブに応じて一緒に移動します。滑らかな変形が必要な場合に便利です。
 
 {/* プロポーショナル編集が有効な状態のスクリーンショット。緑色の影響半径が表示されている様子 */}
-![](../../../../static/img/packages/vrc-lattice-deformation-tool/vertex-proportional.gif)
+![](../../../../static/img/packages/vrc-lattice-deformation-tool/vertex-proportional.webp)
 
 | 設定                                                | 説明                                                            |
 | --------------------------------------------------- | --------------------------------------------------------------- |

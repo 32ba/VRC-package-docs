@@ -17,7 +17,7 @@ sidebar_position: 6
 有効にすると、`ウェイト転写設定` セクションが表示されます。
 
 {/* ウェイト転写設定セクションが表示された Inspector のスクリーンショット */}
-![](../../../../static/img/packages/vrc-lattice-deformation-tool/weight-transfer.png)
+![](../../../../static/img/packages/vrc-lattice-deformation-tool/weight-transfer.webp)
 
 ## 動作の流れ
 

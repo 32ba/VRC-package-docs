@@ -16,7 +16,7 @@ export const Icon = ({name, alt}) => (
 3. Scene ビューにブラシカーソルが表示され、オーバーレイパネルにブラシ設定が表示されます。
 
 {/* ブラシツール起動後の Scene ビューのスクリーンショット。ブラシカーソル (円形) とオーバーレイパネルが見える状態 */}
-![](../../../../static/img/packages/vrc-lattice-deformation-tool/brush-editmode.png)
+![](../../../../static/img/packages/vrc-lattice-deformation-tool/brush-editmode.webp)
 
 ## ブラシモード
 
@@ -29,7 +29,7 @@ export const Icon = ({name, alt}) => (
 | **スムーズ** (Smooth) | <Icon name="smooth" /> | ブラシ範囲内の変形を平滑化。凹凸をなだらかにする                           |
 
 {/* 法線モードで押し出し操作中のスクリーンショット。ブラシで膨らませている様子 */}
-![](../../../../static/img/packages/vrc-lattice-deformation-tool/brush-edit.gif)
+![](../../../../static/img/packages/vrc-lattice-deformation-tool/brush-edit.webp)
 
 ## ブラシ設定
 
@@ -85,4 +85,4 @@ VRChat アバターの左右対称編集に便利です。
 |                     | `ドットサイズ`           | 頂点インジケーターの表示サイズを調整                                              |
 
 {/* 変位ヒートマップが有効な状態のスクリーンショット。レインボーカラーで変形量が可視化されている様子 */}
-![](../../../../static/img/packages/vrc-lattice-deformation-tool/brush-heatmap.png)
+![](../../../../static/img/packages/vrc-lattice-deformation-tool/brush-heatmap.webp)
