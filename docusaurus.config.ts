@@ -41,7 +41,6 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          editUrl: 'https://github.com/32ba/VRC-package-docs/edit/main/',
           routeBasePath: '/',
         },
         blog: false,
@@ -68,11 +67,6 @@ const config: Config = {
           sidebarId: 'docsSidebar',
           position: 'left',
           label: 'ドキュメント',
-        },
-        {
-          href: 'https://github.com/32ba/VRC-package-docs',
-          label: 'GitHub',
-          position: 'right',
         },
       ],
     },
