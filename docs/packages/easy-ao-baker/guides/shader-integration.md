@@ -11,7 +11,7 @@ Inspector の `対象シェーダー (Target Shader)` は通常 `Auto` のまま
 
 もし `シェーダーが自動検出できません` と表示された場合は、`対象シェーダー` のドロップダウンから手動で選択してください。
 
-<img src="/img/packages/easy-ao-baker/easyaobaker-target-shader-dropdown.webp" alt="対象シェーダーのドロップダウンを開いた状態" />
+<img src="/docs/img/packages/easy-ao-baker/easyaobaker-target-shader-dropdown.webp" alt="対象シェーダーのドロップダウンを開いた状態" />
 
 ## lilToon
 
@@ -32,7 +32,7 @@ lilToon の場合、陰影は **1st / 2nd / 3rd Shadow の AO** として書き�
 1 影だけに陰影を効かせたい場合は、`2nd Shadow の Scale` と `3rd Shadow の Scale` を `0` にしてください。
 :::
 
-<img src="/img/packages/easy-ao-baker/easyaobaker-liltoon-settings.webp" alt="lilToon のシェーダー設定セクション" />
+<img src="/docs/img/packages/easy-ao-baker/easyaobaker-liltoon-settings.webp" alt="lilToon のシェーダー設定セクション" />
 
 ## Poiyomi Toon
 
@@ -47,7 +47,7 @@ Poiyomi の場合、陰影は **AO の R / G / B / A チャンネル** にそれ
 
 **通常は R のみ `1.0` にしておけば OK です。** 他のチャンネルは Poiyomi 側で別の用途に使っている場合のみ触ってください。
 
-<img src="/img/packages/easy-ao-baker/easyaobaker-poiyomi-settings.webp" alt="Poiyomi のシェーダー設定セクション" />
+<img src="/docs/img/packages/easy-ao-baker/easyaobaker-poiyomi-settings.webp" alt="Poiyomi のシェーダー設定セクション" />
 
 ## Unity Standard / VRChat Toon Standard / Sunao Shader
 

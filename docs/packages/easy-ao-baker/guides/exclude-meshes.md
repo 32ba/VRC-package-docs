@@ -14,7 +14,7 @@ EasyAOBaker は既定でアバター配下のすべてのメッシュを「陰�
 
 これで、そのメッシュ (と配下のメッシュ) は他のメッシュへの陰影計算に影響しなくなります。
 
-<img src="/img/packages/easy-ao-baker/exclude-from-ao-bake-inspector.webp" alt="Exclude From AO Bake コンポーネントを追加した Inspector" />
+<img src="/docs/img/packages/easy-ao-baker/exclude-from-ao-bake-inspector.webp" alt="Exclude From AO Bake コンポーネントを追加した Inspector" />
 
 ## こんなときに便利
 

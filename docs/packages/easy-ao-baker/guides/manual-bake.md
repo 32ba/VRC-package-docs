@@ -11,7 +11,7 @@ sidebar_position: 5
 2. 一番下にある `今すぐ AO をベイク (Bake AO Now)` ボタンの状態と、その上の `テクスチャのみ (Texture Only)` トグルを確認します。
 3. ボタンを押すと即座にベイクが始まり、完了するとダイアログで出力先が表示されます。
 
-<img src="/img/packages/easy-ao-baker/easyaobaker-advanced-bake-button.webp" alt="詳細設定セクション。テクスチャのみトグルと今すぐ AO をベイクボタンが見える状態" />
+<img src="/docs/img/packages/easy-ao-baker/easyaobaker-advanced-bake-button.webp" alt="詳細設定セクション。テクスチャのみトグルと今すぐ AO をベイクボタンが見える状態" />
 
 :::note
 手動ベイクも「アバター全体の形」を考慮して陰影を計算します。そのため、コンポーネントがアバター (VRC Avatar Descriptor が付いた GameObject) の下に配置されている必要があります。

@@ -13,7 +13,7 @@ sidebar_position: 4
 
 デフォルトではすべてチェックが入っているので、何も変更しなければ全マテリアルに陰影が入ります。
 
-<img src="/img/packages/easy-ao-baker/easyaobaker-material-selection.webp" alt="複数マテリアルを持つ Renderer で、一部のチェックを外した EasyAOBaker Inspector" />
+<img src="/docs/img/packages/easy-ao-baker/easyaobaker-material-selection.webp" alt="複数マテリアルを持つ Renderer で、一部のチェックを外した EasyAOBaker Inspector" />
 
 ## 表示の見方
 

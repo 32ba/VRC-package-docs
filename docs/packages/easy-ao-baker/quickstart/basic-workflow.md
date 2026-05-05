@@ -12,7 +12,7 @@ sidebar_position: 1
    - メニューからは `EasyAOBaker > EasyAOBaker` でも追加できます。
 3. コンポーネントが追加されると、お使いのシェーダー (lilToon など) が自動で判別されます。
 
-<img src="/img/packages/easy-ao-baker/easyaobaker-inspector-just-added.webp" alt="EasyAOBaker コンポーネントを追加した直後の Inspector" />
+<img src="/docs/img/packages/easy-ao-baker/easyaobaker-inspector-just-added.webp" alt="EasyAOBaker コンポーネントを追加した直後の Inspector" />
 
 :::tip
 EasyAOBaker は「メッシュを表示するためのコンポーネント (Skinned Mesh Renderer や Mesh Renderer)」が付いている GameObject にしか追加できません。アバターのルートではなく、Body や Face などのメッシュ本体のオブジェクトに追加してください。
@@ -27,7 +27,7 @@ Inspector の上半分が基本設定です。最初はそのままの設定で�
 - **対象シェーダー (Target Shader)**: 陰影を書き込む先のシェーダー。デフォルトの `Auto` で自動判別されます。
 - **AO を書き込むマテリアル**: 複数マテリアルがある場合、スロットごとに陰影の ON/OFF を切り替えられます。
 
-<img src="/img/packages/easy-ao-baker/easyaobaker-basic-settings.webp" alt="EasyAOBaker Inspector の基本設定セクション (解像度・強度・対象シェーダー・AO を書き込むマテリアル)" />
+<img src="/docs/img/packages/easy-ao-baker/easyaobaker-basic-settings.webp" alt="EasyAOBaker Inspector の基本設定セクション (解像度・強度・対象シェーダー・AO を書き込むマテリアル)" />
 
 ## 3. シェーダー別の調整 (必要なら)
 

@@ -16,7 +16,7 @@ AO マスクを使うと、テクスチャの一部だけに陰影を入れる /
 3. `EasyAOBaker` Inspector の `AO Mask` 欄にマスク画像をドラッグ&ドロップします。
 4. いつも通りアップロードまたは手動ベイクすると、白い部分だけに陰影が付きます。
 
-<img src="/img/packages/easy-ao-baker/easyaobaker-ao-mask-assigned.webp" alt="AO Mask にマスク画像を設定済みの EasyAOBaker Inspector" />
+<img src="/docs/img/packages/easy-ao-baker/easyaobaker-ao-mask-assigned.webp" alt="AO Mask にマスク画像を設定済みの EasyAOBaker Inspector" />
 
 ## マスクの作り方の例
 
