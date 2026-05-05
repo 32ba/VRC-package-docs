@@ -25,6 +25,53 @@ const sidebars: SidebarsConfig = {
       items: [
         {
           type: 'category',
+          label: 'EasyAOBaker',
+          items: [
+            'packages/easy-ao-baker/overview',
+            {
+              type: 'category',
+              label: 'インストール',
+              items: [
+                'packages/easy-ao-baker/install/prerequisites',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'クイックスタート',
+              items: [
+                'packages/easy-ao-baker/quickstart/basic-workflow',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'ガイド',
+              items: [
+                'packages/easy-ao-baker/guides/bake-modes',
+                'packages/easy-ao-baker/guides/shader-integration',
+                'packages/easy-ao-baker/guides/ao-mask',
+                'packages/easy-ao-baker/guides/material-selection',
+                'packages/easy-ao-baker/guides/manual-bake',
+                'packages/easy-ao-baker/guides/exclude-meshes',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'トラブルシュート',
+              items: [
+                'packages/easy-ao-baker/troubleshooting/common-issues',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'リファレンス',
+              items: [
+                'packages/easy-ao-baker/reference/settings',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
           label: 'Lattice Deformation Tool',
           items: [
             'packages/vrc-lattice-deformation-tool/overview',
