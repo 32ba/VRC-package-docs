@@ -3,7 +3,7 @@ title: 前提条件
 sidebar_position: 1
 ---
 
-このページでは EasyAOBaker を使い始めるための準備をまとめます。
+EasyAOBaker を使い始める前に、Unity と依存パッケージがそろっているか確認します。
 
 ## 必要なもの
 
@@ -23,13 +23,13 @@ sidebar_position: 1
 
 ## インストール方法
 
-### VPM からインストール (推奨)
+### VPM からインストール（推奨）
 
 1. VRChat Creator Companion を開きます。
 2. `Settings > Packages` から VPM リポジトリに `https://vpm.32ba.net/` を追加します。
 3. 対象プロジェクトの `Manage Project` 画面で **EasyAOBaker** を追加します。
 
-依存パッケージ (NDMF) は自動的に追加されます。
+依存パッケージの NDMF は自動的に追加されます。
 
 ### Git URL からインストール
 
@@ -43,7 +43,8 @@ https://github.com/32ba/ao-baker.git
 
 ## プロジェクトの準備
 
-VCC の `Create New Project` から **VRChat SDK - Avatars** テンプレートで作成したプロジェクトを推奨します。既存のアバタープロジェクトにも後から追加できます。
+VCC の `Create New Project` から **VRChat SDK - Avatars** テンプレートで作成したプロジェクトを推奨します。
+既存のアバタープロジェクトにも後から追加できます。
 
 ## 他のツールとの併用について
 

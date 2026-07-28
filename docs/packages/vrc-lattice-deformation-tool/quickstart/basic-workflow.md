@@ -3,7 +3,8 @@ title: クイックスタート
 sidebar_position: 1
 ---
 
-ここでは `LatticeDeformer` をアバターに追加し、ラティスレイヤーで変形して NDMF ビルドまで確認する基本的な手順を解説します。想定所要時間は 15 分程度です。
+最初の 15 分で、`LatticeDeformer` の追加からラティス変形、NDMF ビルドまでを一度通します。
+この流れを終えると、元メッシュを変更せずに変形結果を確認できます。
 
 <iframe width="100%" style={{"aspect-ratio": "16 / 7"}} src="https://www.youtube.com/embed/OXLHyXd-FU8?si=zMSNblM5kWn3H7JE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
@@ -25,13 +26,14 @@ sidebar_position: 1
 {/* TODO: グループとレイヤーのリスト表示のスクリーンショット。[L] と [B] のバッジが見える状態 */}
 
 :::tip
-ブラシレイヤーやグループの詳細は[レイヤーとグループ](../guides/layers-and-groups.md)ガイドを参照してください。ここではまずラティスレイヤーの基本操作を学びます。
+最初はラティスレイヤーだけを使います。
+ブラシレイヤーとグループの使い分けは、[レイヤーとグループ](../guides/layers-and-groups.md)を参照してください。
 :::
 
 ## 3. ラティスケージを設定
 
 1. ラティスレイヤーを選択した状態で、Inspector の `現在のグリッド分割数` を確認します。
-2. 分割数を変更する場合、`変更後のグリッド分割数` に希望する分割数 (例: `3, 4, 3`) を入力し、`適用` を押します。変更を元に戻す場合は `元に戻す`。
+2. 分割数を変更する場合は、`変更後のグリッド分割数` に値（例：`3, 4, 3`）を入力し、`適用` を押します。入力だけを取り消す場合は、`元に戻す` を押します。
 
 :::tip
 `ケージ詳細設定` を展開すると `Local Bounds` や `Interpolation` (Trilinear / Cubic Bernstein) を調整できます。
@@ -57,7 +59,7 @@ sidebar_position: 1
 
 3. 左右対称に変形したい場合はオーバーレイで `対称編集を有効化` をオンにし、`対称モード` と `対称軸` を指定します。
     - `ミラー` は位置を反転コピー、`反対称` は逆方向に変位させます。
-4. `制御点の範囲` を `全制御点` に切り替えると、内部の制御点も表示・編集できます。`境界のみ` のときは内部点が自動的にスムージングされます。
+4. `制御点の範囲` を `全制御点` に切り替えると、内部の制御点も表示して編集できます。`境界のみ` のときは内部点が自動的にスムージングされます。
 
 ## 5. プレビューを確認
 
@@ -76,13 +78,13 @@ sidebar_position: 1
 2. NDMF のビルド時に `LatticeDeformer` コンポーネントは自動削除され、`*_LatticeBaked` 付きの新しいメッシュが生成されます。
 3. VRChat で検証する場合は、生成されたメッシュを含むアバターを `Build & Publish` し、インスタンス内で表示を確認します。
 
-## 次のステップ
+## 変形を組み立てる
 
-基本的なラティス変形の使い方をマスターしたら、以下のガイドでさらに高度な機能を活用できます。
+ラティス変形を確認できたら、必要な操作を次のガイドから選びます。
 
-- [レイヤーとグループ](../guides/layers-and-groups.md) — 複数レイヤーの組み合わせとグループ管理
-- [ブラシツール](../guides/brush-tool.md) — ブラシによる直感的なメッシュ変形
-- [頂点選択ツール](../guides/vertex-selection.md) — 頂点の直接選択と移動・回転・スケール
-- [BlendShape](../guides/blendshape.md) — BlendShape としての出力とインポート
-- [左右操作](../guides/symmetry.md) — VRChat アバターの左右対称ワークフロー
-- [ウェイト転送](../guides/weight-transfer.md) — 変形後のボーンウェイト再計算
+- [レイヤーとグループ](../guides/layers-and-groups.md)：複数レイヤーの組み合わせとグループ管理
+- [ブラシツール](../guides/brush-tool.md)：ブラシによる直感的なメッシュ変形
+- [頂点選択ツール](../guides/vertex-selection.md)：頂点の直接選択と移動、回転、スケール
+- [BlendShape](../guides/blendshape.md)：BlendShape としての出力とインポート
+- [左右操作](../guides/symmetry.md)：VRChat アバターの左右対称ワークフロー
+- [ウェイト転送](../guides/weight-transfer.md)：変形後のボーンウェイト再計算

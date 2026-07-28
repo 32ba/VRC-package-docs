@@ -3,11 +3,14 @@ title: BlendShape
 sidebar_position: 4
 ---
 
-Lattice Deformation Tool では、変形結果を BlendShape (ShapeKey) として出力したり、既存の BlendShape をブラシレイヤーとしてインポートして編集したりできます。
+変形をメッシュへ固定せず、VRChat 上で強さを切り替えたい場合があります。
+Lattice Deformation Tool では、変形結果を BlendShape（ShapeKey）として出力できます。
+既存の BlendShape をブラシレイヤーへ読み込み、形を修正することもできます。
 
 ## BlendShape 出力
 
-グループ単位で変形結果を BlendShape として出力できます。直接メッシュを変形する代わりに ShapeKey を生成するため、VRChat 上でアニメーションやメニューから動的に変形を制御できます。
+変形結果はグループ単位で BlendShape として出力されます。
+メッシュへ直接適用せず ShapeKey を生成するため、VRChat のアニメーションやメニューから強さを制御できます。
 
 ### 設定手順
 
@@ -27,7 +30,8 @@ Lattice Deformation Tool では、変形結果を BlendShape (ShapeKey) とし�
 
 ### カーブ
 
-アニメーションカーブで BlendShape の 0〜100% の変化を制御します。デフォルトは線形 (0→1) ですが、イージングカーブを設定すると段階的な変化を表現できます。
+アニメーションカーブで BlendShape の 0〜100% の変化を制御します。
+デフォルトは線形 (0→1) ですが、イージングカーブを設定すると段階的な変化を表現できます。
 
 ### テストモード
 

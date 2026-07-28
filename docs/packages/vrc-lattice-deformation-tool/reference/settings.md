@@ -7,9 +7,10 @@ export const Icon = ({name, alt}) => (
   <img src={`/docs/img/icons/${name}.png`} alt={alt || name} className="icon-inline" />
 );
 
-このページでは `LatticeDeformer` コンポーネントと各 Scene ツールの設定項目を、日本語 UI 表示を基準にまとめています。
+`LatticeDeformer` と各 Scene ツールに表示される項目を、日本語 UI の並び順で掲載します。
+ラベルを照合しやすいよう、英語表記も併記しています。
 
-## Inspector: LatticeDeformer (共通)
+## Inspector：LatticeDeformer（共通）
 
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
@@ -18,7 +19,7 @@ export const Icon = ({name, alt}) => (
 | Skinned Mesh Source | Skinned Mesh Source | 変形対象の `Skinned Mesh Renderer`。同じ GameObject にある場合は自動設定 |
 | Static Mesh Source | Static Mesh Source | メッシュフィルターを持つ静的メッシュ用。Skinned Mesh Source が設定されている場合は無効 |
 
-## Inspector: 変形グループ
+## Inspector：変形グループ
 
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
@@ -28,7 +29,7 @@ export const Icon = ({name, alt}) => (
 | グループを貼り付け | Paste Group | クリップボードからペースト |
 | グループを削除 | Delete Group | アクティブグループとその全レイヤーを削除 |
 
-## Inspector: レイヤー
+## Inspector：レイヤー
 
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
@@ -41,7 +42,7 @@ export const Icon = ({name, alt}) => (
 | レイヤーを貼り付け | Paste Layer | クリップボードからペースト |
 | レイヤーを削除 | Delete Layer | アクティブレイヤーを削除 |
 
-## Inspector: ラティスケージ設定
+## Inspector：ラティスケージ設定
 
 ラティスレイヤーが選択されているときに表示されます。
 
@@ -60,18 +61,18 @@ export const Icon = ({name, alt}) => (
 | Local Bounds | Local Bounds | ラティスケージのサイズを手動設定。通常はデフォルトで問題なし |
 | Interpolation | Interpolation | 補間方法。`Trilinear` (高速) / `Cubic Bernstein` (滑らか) |
 
-## Inspector: 左右操作
+## Inspector：左右操作
 
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
-| 左右操作 | L/R Operations | 軸ごとの変形分割・ミラーリングツール |
+| 左右操作 | L/R Operations | 軸ごとの変形分割とミラーリング |
 | 左を残す | Split L | X 軸正側の変形をゼロにし、左側のみ残す |
 | 右を残す | Split R | X 軸負側の変形をゼロにし、右側のみ残す |
 | X反転 | Flip X | X 軸を基準に全変形データをミラーリング |
 | Y反転 | Flip Y | Y 軸を基準に全変形データをミラーリング |
 | Z反転 | Flip Z | Z 軸を基準に全変形データをミラーリング |
 
-## Inspector: BlendShape
+## Inspector：BlendShape
 
 グループ単位の設定です。
 
@@ -85,7 +86,7 @@ export const Icon = ({name, alt}) => (
 | テストウェイト | Test Weight | プレビューの強度 (0〜100%) |
 | BlendShape のインポート | Import BlendShape | 既存 BlendShape をブラシレイヤーとして読み込み |
 
-## Inspector: メッシュ再構築オプション
+## Inspector：メッシュ再構築オプション
 
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
@@ -97,7 +98,7 @@ export const Icon = ({name, alt}) => (
 | (NDMF) Enable Lattice Preview | (NDMF) Enable Lattice Preview | プレビューの ON/OFF 切り替え |
 | (NDMF) Disable Lattice Preview | (NDMF) Disable Lattice Preview | プレビューを無効化 |
 
-## Inspector: ウェイト転写設定
+## Inspector：ウェイト転写設定
 
 `ボーンウェイトを再計算` を有効にすると表示されます。
 
@@ -112,14 +113,14 @@ export const Icon = ({name, alt}) => (
 | └ 最大反復回数 | Max Iterations | 反復回数の上限 (デフォルト: 1000) |
 | └ 収束判定閾値 | Tolerance | 収束の判定基準 (デフォルト: 1e-6) |
 
-## Inspector: ラティスケージ位置調整
+## Inspector：ラティスケージ位置調整
 
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
 | ラティスケージ位置調整 | Lattice Cage Alignment | 編集用ケージの位置とスケール表示を調整 |
 | オフセット | Offset | ケージの表示位置を微調整 (表示のみ、変形には影響なし) |
 
-## Inspector: エディターボタン
+## Inspector：エディターボタン
 
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
@@ -128,7 +129,7 @@ export const Icon = ({name, alt}) => (
 
 ---
 
-## Scene Overlay: Lattice Tool
+## Scene Overlay：Lattice Tool
 
 ラティスレイヤー選択時に表示されるオーバーレイです。
 
@@ -151,7 +152,7 @@ export const Icon = ({name, alt}) => (
 
 ---
 
-## Scene Overlay: <Icon name="brush" /> ブラシツール
+## Scene Overlay：<Icon name="brush" /> ブラシツール
 
 ブラシレイヤー選択時に <Icon name="brush" /> `ブラシ` モードで表示されるオーバーレイです。
 
@@ -193,7 +194,7 @@ export const Icon = ({name, alt}) => (
 
 ---
 
-## Scene Overlay: <Icon name="vertex-select" /> 頂点選択ツール
+## Scene Overlay：<Icon name="vertex-select" /> 頂点選択ツール
 
 ブラシレイヤー選択時に <Icon name="vertex-select" /> `頂点選択` モードで表示されるオーバーレイです。
 
@@ -202,7 +203,7 @@ export const Icon = ({name, alt}) => (
 | | **変換モード** | **Transform Mode** | |
 | <Icon name="move" /> | └ 移動 | Move | 選択頂点をハンドルで移動 |
 | <Icon name="rotate" /> | └ 回転 | Rotate | ピボットを中心に回転 |
-| <Icon name="scale" /> | └ スケール | Scale | ピボットを中心に拡大・縮小 |
+| <Icon name="scale" /> | └ スケール | Scale | ピボットを中心に拡大または縮小 |
 | <Icon name="pivot" /> | ピボット | Pivot | `中心` / `最後に選択` |
 | | すべて選択 | Select All | 全頂点を選択 |
 | | 選択解除 | Select None | 選択を解除 |
