@@ -3,16 +3,20 @@ title: BlendShape
 sidebar_position: 4
 ---
 
-Lattice Deformation Tool では、変形結果を BlendShape (ShapeKey) として出力したり、既存の BlendShape をブラシレイヤーとしてインポートして編集したりできます。
+変形をメッシュへ固定せず、VRChat 上で強さを切り替えたい場合があります。
+Lattice Deformation Tool では、変形結果を BlendShape（ShapeKey）として出力できます。
+既存の BlendShape をブラシレイヤーへ読み込み、形を修正することもできます。
 
 ## BlendShape 出力
 
-グループ単位で変形結果を BlendShape として出力できます。直接メッシュを変形する代わりに ShapeKey を生成するため、VRChat 上でアニメーションやメニューから動的に変形を制御できます。
+変形結果はグループ単位で BlendShape として出力されます。
+メッシュへ直接適用せず ShapeKey を生成するため、VRChat のアニメーションやメニューから強さを制御できます。
 
 ### 設定手順
 
 1. Inspector のグループ設定で `BlendShape 出力` を `OutputAsBlendShape` に変更します。
-2. `BlendShape 名` にメッシュに生成される BlendShape の名前を設定します (デフォルトで GameObject 名が入ります)。
+2. `BlendShape 名` に、生成する BlendShape の名前を設定します。
+   空欄の場合は GameObject 名が使われます。
 3. `カーブ` でアニメーションカーブを編集し、0%〜100% の変化をカスタマイズできます。
 
 {/* BlendShape 出力設定の Inspector スクリーンショット。BlendShape 出力ドロップダウン、名前フィールド、カーブエディタが見える状態 */}
@@ -22,12 +26,13 @@ Lattice Deformation Tool では、変形結果を BlendShape (ShapeKey) とし�
 
 | モード               | 説明                                                   |
 | -------------------- | ------------------------------------------------------ |
-| `Disabled`           | 通常の直接変形 (デフォルト)                            |
+| `Disabled`           | 通常の直接変形（デフォルト）                            |
 | `OutputAsBlendShape` | 変形結果をメッシュに直接適用せず BlendShape として出力 |
 
 ### カーブ
 
-アニメーションカーブで BlendShape の 0〜100% の変化を制御します。デフォルトは線形 (0→1) ですが、イージングカーブを設定すると段階的な変化を表現できます。
+アニメーションカーブで BlendShape の 0〜100% の変化を制御します。
+デフォルトは線形 (0→1) ですが、イージングカーブを設定すると段階的な変化を表現できます。
 
 ### テストモード
 
@@ -47,8 +52,8 @@ BlendShape 出力を設定した後、`テストモードに入る` ボタンで
 
 ### インポート手順
 
-1. Inspector の `BlendShape のインポート` セクションを開きます。
-2. ドロップダウンからインポートしたい BlendShape を選択します。
+1. Inspector の `BlendShape のインポート` 行にある `選択...` を押します。
+2. メニューからインポートしたい BlendShape を選択します。
 3. 選択すると、その BlendShape のデルタが新しいブラシレイヤーとして追加されます。
 
 {/* BlendShape インポートのドロップダウンメニューのスクリーンショット */}
