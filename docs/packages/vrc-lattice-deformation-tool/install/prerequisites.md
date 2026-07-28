@@ -19,4 +19,4 @@ VCC の `新しいプロジェクトを作成 (Create New Project)` から **VRC
 ## 互換性メモ
 
 - Avatar Optimizer など他の NDMF ベースツールと共存できます。
-  ビルド順はプラグインが自動調整し、`Lattice Deformer` が `AAO: Avatar Optimizer (com.anatawa12.avatar-optimizer)` より前に処理されるようになっています。
+  ビルド順はプラグインが自動調整し、`Mesh Deformer` が `AAO: Avatar Optimizer (com.anatawa12.avatar-optimizer)` より前に処理されます。

@@ -12,12 +12,11 @@ sidebar_position: 3
    - **白い部分**：陰影を生成する
    - **黒い部分**：陰影を生成しない（明るいまま）
    - **グレー**：中間の効き具合
-2. Unity にマスク画像をインポートし、Inspector で `Read/Write` を ON にします。
-   - テクスチャを選択 → Inspector → `Advanced` → `Read/Write Enabled` にチェック → `Apply`
-3. `EasyAOBaker` Inspector の `AO Mask` 欄にマスク画像をドラッグ＆ドロップします。
+2. Unity にマスク画像をインポートします。
+3. `EasyAOBaker` Inspector の `AOマスク` 欄にマスク画像をドラッグ＆ドロップします。
 4. いつも通りアップロードまたは手動ベイクすると、白い部分だけに陰影が付きます。
 
-<img src="/docs/img/packages/easy-ao-baker/easyaobaker-ao-mask-assigned.webp" alt="AO Mask にマスク画像を設定済みの EasyAOBaker Inspector" />
+<img src="/docs/img/packages/easy-ao-baker/easyaobaker-ao-mask-assigned.webp" alt="AOマスクに画像を設定済みの EasyAOBaker Inspector" />
 
 ## マスクの作り方の例
 
@@ -41,12 +40,11 @@ sidebar_position: 3
 
 ## マスクを設定しない場合
 
-`AO Mask` を空欄のままにすると、テクスチャ全体に陰影が生成されます。
+`AOマスク` を空欄のままにすると、テクスチャ全体に陰影が生成されます。
 通常はこれで問題ありません。
 
 ## うまく動かないときは
 
-- **反映されない**：マスク画像の `Read/Write Enabled` が ON になっているか確認してください。
-- **UV がずれて見える**：マスクの UV レイアウトが対象メッシュと一致しているか確認してください。
+- **反映されない**：マスクの UV レイアウトが対象メッシュと一致しているか確認してください。
   別のアバターや別のテクスチャ用に作ったマスクは使えません。
 - **境界がガタガタ**：マスク画像自体にガウシアンブラーをかけて境界を柔らかくしてみてください。

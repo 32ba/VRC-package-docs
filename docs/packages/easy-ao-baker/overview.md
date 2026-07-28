@@ -38,5 +38,5 @@ EasyAOBaker は、その AO（陰影）をアバターへ自動で焼き付け�
 ## 用語について
 
 - Unity や VCC の UI は日本語表示を基準に書いています。
-- EasyAOBaker の Inspector でも一部の項目名（`Bake Mode`, `RayCast` など）は日本語 UI でも英語のまま表示されます。
+- EasyAOBaker の日本語 UI でも、モード名の `RayCast` や `SSAO` などは英語のまま表示されます。
   本書でも実際のラベルに合わせています。

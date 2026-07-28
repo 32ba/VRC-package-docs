@@ -7,10 +7,11 @@ export const Icon = ({name, alt}) => (
   <img src={`/docs/img/icons/${name}.png`} alt={alt || name} className="icon-inline" />
 );
 
-`LatticeDeformer` と各 Scene ツールに表示される項目を、日本語 UI の並び順で掲載します。
+`Mesh Deformer` コンポーネントと各 Scene ツールに表示される項目を、日本語 UI の並び順で掲載します。
+実装上のコンポーネントクラス名は `LatticeDeformer` です。
 ラベルを照合しやすいよう、英語表記も併記しています。
 
-## Inspector：LatticeDeformer（共通）
+## Inspector：Mesh Deformer（共通）
 
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
@@ -95,8 +96,8 @@ export const Icon = ({name, alt}) => (
 | 接線 | Tangents | タンジェントを再計算。法線マップ使用時に有効化 |
 | 境界 | Bounds | バウンズを再計算 |
 | ボーンウェイトを再計算 | Recalculate Bone Weights | ボーンウェイトを変形に合わせて再計算（SkinnedMeshRenderer のみ） |
-| (NDMF) Enable Lattice Preview | (NDMF) Enable Lattice Preview | プレビューの ON/OFF 切り替え |
-| (NDMF) Disable Lattice Preview | (NDMF) Disable Lattice Preview | プレビューを無効化 |
+| (NDMF) ラティスプレビューを有効化 | (NDMF) Enable Lattice Preview | NDMF のリアルタイムプレビューを有効化 |
+| (NDMF) ラティスプレビューを無効化 | (NDMF) Disable Lattice Preview | NDMF のリアルタイムプレビューを無効化 |
 
 ## Inspector：ウェイト転写設定
 
@@ -106,7 +107,7 @@ export const Icon = ({name, alt}) => (
 | --- | --- | --- |
 | ウェイト転写設定 | Weight Transfer Settings | ウェイト転送の設定セクション |
 | **Stage 1: 初期転写** | Stage 1: Initial Transfer | 元メッシュの近傍頂点からウェイトをコピー |
-| └ 最大転写距離 | Max Transfer Distance | メッシュバウンズ対角線に対する割合（デフォルト: 0.05） |
+| └ 最大転写距離 | Max Transfer Distance | 変形後メッシュのバウンズ対角線に対する基準割合（デフォルト: 0.05）。変形量に応じて実際の探索距離が広がる場合あり |
 | └ 法線角度閾値 | Normal Angle Threshold | 法線角度差の上限（デフォルト: 60°） |
 | **Stage 2: ウェイト補間** | Stage 2: Weight Inpainting | 転写できなかった頂点を周囲から滑らかに補完 |
 | └ 補間を有効化 | Enable Inpainting | 補間の有効/無効 |
@@ -170,8 +171,8 @@ Scene ビューの変形編集では、単一の `Mesh Deformer` EditorTool と�
 | <Icon name="normal" /> | └ 法線 | Normal | 法線方向に押し出し/引き込み |
 | <Icon name="move" /> | └ 移動 | Move | スクリーン方向に移動 |
 | <Icon name="smooth" /> | └ スムーズ | Smooth | 変形を平滑化 |
-| | ブラシ半径 | Brush Radius | ブラシの影響範囲 |
-| | ブラシ強度 | Brush Strength | 変位量 (0〜1) |
+| | ブラシ半径 (cm) | Brush Radius (cm) | ブラシの影響範囲 (0〜10 cm) |
+| | ブラシ強度 (%) | Brush Strength (%) | 各ストロークの強度 (0〜100%) |
 | | ブラシ減衰 | Brush Falloff | 減衰カーブの種類 |
 | <Icon name="invert" /> | ブラシ反転 | Invert Brush | 効果の方向を反転 |
 | | **ミラー** | | |
@@ -214,15 +215,12 @@ Scene ビューの変形編集では、単一の `Mesh Deformer` EditorTool と�
 | | 選択解除 | Select None | 選択を解除 |
 | <Icon name="reset" /> | 選択した頂点をリセット | Reset Selected Vertices | 選択頂点の変位をクリア |
 | <Icon name="reset" /> | すべての頂点をリセット | Reset All Vertices | 全頂点の変位をクリア |
-| | **プロポーショナル編集** | **Proportional Editing** | |
-| <Icon name="proportional" /> | └ プロポーショナル編集 | Proportional Editing | 有効/無効 |
-| | └ プロポーショナル半径 | Proportional Radius | 影響範囲 |
-| | └ 減衰 | Falloff | 減衰カーブの種類 |
+| | プロポーショナル半径 (cm) | Proportional Radius (cm) | 周囲への影響範囲。`0` で無効、最大 10 cm |
+| | 減衰 | Falloff | 減衰カーブの種類 |
 | | **可視化** | **Visualization** | |
 | <Icon name="eye" /> | ワイヤーフレーム表示 | Show Wireframe | メッシュエッジを表示 |
 | | ドットサイズ | Dot Size | 頂点ドットの表示サイズ |
 | <Icon name="backface-cull" /> | 背面カリング | Backface Culling | カメラから見える面のみ |
-| <Icon name="connected" /> | 接続のみ | Connected Only | 矩形選択を接続頂点に制限 |
 
 ### 頂点選択ツールのショートカット
 
@@ -237,6 +235,6 @@ Scene ビューの変形編集では、単一の `Mesh Deformer` EditorTool と�
 
 ## ベイク時の自動処理
 
-- NDMF の Build Pipeline 実行時に `LatticeDeformer` は自動的にメッシュを複製 (`*_LatticeBaked`) し、元コンポーネントは削除されます。
+- NDMF の Build Pipeline 実行時に、有効な `Mesh Deformer` はメッシュを複製し、`*_MeshDeformed` という名前を付けてから元コンポーネントを削除します。
 - `ボーンウェイトを再計算` が有効な場合、ベイク時にウェイト転送処理が実行されます。
 - ビルド順は `Avatar Optimizer` より前に自動調整されます。

@@ -107,15 +107,16 @@ Poiyomi の R、G、B、A Strength のうち、複数を同時に `1.0` にし�
 
 ### Q. AO マスクが反映されない
 
-- マスク画像の Inspector で `Advanced > Read/Write Enabled` にチェックが入っているか確認してください。
 - マスクの UV レイアウトが対象メッシュと一致しているか確認してください。
+- `AOマスク` に目的の画像が割り当てられているか確認してください。
 
 ## 手動ベイク
 
-### Q. 「アバタールートが見つかりませんでした」と出る
+### Q. 手動ベイクに意図しないメッシュが含まれる
 
-`EasyAOBaker` が付いた GameObject の親階層には、`VRC Avatar Descriptor` を持つ GameObject が必要です。
-`EasyAOBaker` をアバターのルート配下へ移動してください。
+親階層に `VRC Avatar Descriptor` がある場合は、その GameObject 以下の有効な Renderer が計算対象になります。
+Descriptor がない場合は、EasyAOBaker からたどれる最上位の GameObject がルートになります。
+対象外にしたい Renderer には `Exclude From AO Bake` を追加してください。
 
 ### Q. 手動ベイクで変わったマテリアルを元に戻したい
 

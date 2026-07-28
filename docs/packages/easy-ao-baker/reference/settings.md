@@ -16,7 +16,7 @@ sidebar_position: 1
 | 解像度 | Resolution | 陰影テクスチャのサイズ。`256` / `512` / `1024` / `2048` / `4096` から選択 |
 | 強度 | Intensity | 陰影全体の濃さ倍率（デフォルト `1.0`）。大きいほど濃くなる |
 | 対象シェーダー | Target Shader | 陰影を書き込む先のシェーダー。`Auto` 推奨 |
-| AO Mask | AO Mask | 陰影生成範囲のマスク画像。白=生成、黒=除外 |
+| AOマスク | AO Mask | 陰影生成範囲のマスク画像。白=生成、黒=除外 |
 | AO を書き込むマテリアル | Materials to bake | マテリアルスロットごとの ON/OFF |
 
 ### Target Shader の選択肢
@@ -101,7 +101,7 @@ sidebar_position: 1
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
 | テクスチャのみ（手動ベイク） | Texture Only (manual) | ON: PNG のみ出力 / OFF: マテリアルも自動差し替え |
-| 今すぐ AO をベイク | Bake AO Now | ボタン。クリックで即時ベイク |
+| 今すぐAOをベイク | Bake AO Now | ボタン。クリックで即時ベイク |
 
 :::note
 `テクスチャのみ` は、手動ベイク時の動作だけを切り替えます。
@@ -113,8 +113,9 @@ sidebar_position: 1
 ### Exclude From AO Bake
 
 陰影計算から除外したいメッシュへ追加するマーカーコンポーネントです。
-設定項目はありません。
-追加した GameObject とその配下のメッシュは、他のメッシュへの陰影計算に影響しなくなります。
+追加した GameObject と同じ GameObject にある Renderer は、陰影計算から除外されます。
+子階層の Renderer は自動では除外されません。
+`詳細設定` の `除外しない Baker` では、除外を解除する EasyAOBaker を個別に選べます。
 
 詳しくは [オクルーダーから除外する](../guides/exclude-meshes.md) を参照してください。
 
@@ -129,5 +130,6 @@ Inspector の上部にあるドロップダウンから以下の言語に切り�
 ## ビルド時の自動処理
 
 - `VRChat SDK > Build & Test`（または `NDMF > Build Pipeline > Run Build`）実行時に、`EasyAOBaker` が自動で陰影をベイクしてマテリアルに適用します。
-- `AAO: Avatar Optimizer` など他の NDMF ツールを併用している場合、それらの処理が終わった後に EasyAOBaker が動作します。
+- EasyAOBaker は NDMF の Transforming フェーズで、Modular Avatar と TexTransTool の処理後に動作します。
+- Optimizing フェーズで動作する `AAO: Avatar Optimizer` よりは先に実行されます。
 - 処理が完了すると `EasyAOBaker` および `Exclude From AO Bake` コンポーネントはアバターから自動的に削除されます。

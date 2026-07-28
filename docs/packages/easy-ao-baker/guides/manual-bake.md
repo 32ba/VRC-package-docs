@@ -4,19 +4,20 @@ sidebar_position: 5
 ---
 
 陰影を調整するたびにアバターをアップロードする必要はありません。
-Inspector の `今すぐ AO をベイク` ボタンを使えば、その場で仕上がりを確認したり、テクスチャだけを書き出したりできます。
+Inspector の `今すぐAOをベイク` ボタンを使えば、その場で仕上がりを確認したり、テクスチャだけを書き出したりできます。
 
 ## 手動ベイクの手順
 
 1. `EasyAOBaker` Inspector の `詳細設定` を展開します。
-2. 一番下にある `今すぐ AO をベイク (Bake AO Now)` ボタンの状態と、その上の `テクスチャのみ (Texture Only)` トグルを確認します。
+2. 一番下にある `今すぐAOをベイク (Bake AO Now)` ボタンと、その上の `テクスチャのみ（手動ベイク） (Texture Only (manual))` を確認します。
 3. ボタンを押すと即座にベイクが始まり、完了するとダイアログで出力先が表示されます。
 
-<img src="/docs/img/packages/easy-ao-baker/easyaobaker-advanced-bake-button.webp" alt="詳細設定セクション。テクスチャのみトグルと今すぐ AO をベイクボタンが見える状態" />
+<img src="/docs/img/packages/easy-ao-baker/easyaobaker-advanced-bake-button.webp" alt="詳細設定セクション。テクスチャのみトグルと今すぐAOをベイクボタンが見える状態" />
 
 :::note
-手動ベイクでも、アバター全体の形を考慮して陰影を計算します。
-そのため、コンポーネントは `VRC Avatar Descriptor` が付いた GameObject の配下に配置する必要があります。
+手動ベイクでも、処理対象のルート以下にある有効な Renderer を考慮して陰影を計算します。
+親階層に `VRC Avatar Descriptor` があれば、その GameObject をルートとして使います。
+見つからない場合は、EasyAOBaker からたどれる最上位の GameObject を使います。
 :::
 
 ## `テクスチャのみ` の 2 つの動作
@@ -44,7 +45,7 @@ Inspector の `今すぐ AO をベイク` ボタンを使えば、その場で�
 Assets/EasyAOBakerOutput/<アバター名>_<日時>/
 ```
 
-- アバター名はアバターのルート GameObject の名前です。
+- フォルダ名には、処理対象のルート GameObject の名前が使われます。
 - 日時フォルダが毎回作られるので、過去の結果は上書きされずに残ります。
 - いらなくなったらフォルダごと削除して構いません。
 
@@ -57,11 +58,6 @@ Game ビューでは、アバター全体の見た目を確認できます。
 - Play モードでは元のマテリアルが変更されないので、手軽にプレビューできます。
 
 ## うまくいかないときは
-
-### 「アバタールートが見つかりませんでした」と出る
-
-`EasyAOBaker` が配置されている GameObject の親階層に、VRChat のアバター情報 (VRC Avatar Descriptor) を持つ GameObject が必要です。
-通常はアバターのルートに Descriptor が付いているので問題ありません。
 
 ### ベイクしたマテリアル変更を元に戻したい
 

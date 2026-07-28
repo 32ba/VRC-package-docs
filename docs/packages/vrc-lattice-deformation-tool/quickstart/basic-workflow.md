@@ -3,7 +3,8 @@ title: クイックスタート
 sidebar_position: 1
 ---
 
-最初の 15 分で、`LatticeDeformer` の追加からラティス変形、NDMF ビルドまでを一度通します。
+最初の 15 分で、`Mesh Deformer` コンポーネントの追加からラティス変形、NDMF ビルドまでを一度通します。
+実装上のクラス名は `LatticeDeformer` ですが、Unity の Add Component には `Mesh Deformer` と表示されます。
 この流れを終えると、元メッシュを変更せずに変形結果を確認できます。
 
 <iframe width="100%" style={{"aspect-ratio": "16 / 7"}} src="https://www.youtube.com/embed/OXLHyXd-FU8?si=zMSNblM5kWn3H7JE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -11,11 +12,11 @@ sidebar_position: 1
 ## 1. コンポーネントを追加
 
 1. Hierarchy で変形対象の Mesh がアタッチされた GameObject を選択します。
-2. Inspector の `コンポーネントを追加 (Add Component)` で `Lattice Deformer` を検索し追加します。
+2. Inspector の `コンポーネントを追加 (Add Component)` から `32ba > Mesh Deformer` を追加します。
 3. オブジェクトに `Skinned Mesh Renderer` が付いている場合は `Skinned Mesh Source` が自動入力されます。
    静的メッシュなら `Static Mesh Source` に参照を設定してください。
 
-{/* TODO: LatticeDeformer コンポーネントを追加した直後の Inspector のスクリーンショット */}
+{/* TODO: Mesh Deformer コンポーネントを追加した直後の Inspector のスクリーンショット */}
 
 ## 2. レイヤーを確認
 
@@ -73,7 +74,7 @@ sidebar_position: 1
 ## 5. プレビューを確認
 
 1. Inspector の `メッシュ再構築オプション` を展開し、必要に応じて `法線`、`接線`、`境界` の再計算を有効にします。
-2. `(NDMF) Enable Lattice Preview` ボタンを押し、プレビュー表示を切り替えます。
+2. `(NDMF) ラティスプレビューを有効化`（英語 UI：`(NDMF) Enable Lattice Preview`）を押します。
    Scene ビューでメッシュが意図した形に変形しているか確認してください。
 
 {/* TODO: プレビュー ON の状態で変形結果が反映された Scene ビューのスクリーンショット */}
@@ -85,7 +86,7 @@ sidebar_position: 1
 ## 6. NDMF ビルドでベイク
 
 1. 変形が固まったら、`NDMF > Build Pipeline > Run Build`（または `VRChat SDK > Build & Test`）を実行します。
-2. NDMF のビルド時に `LatticeDeformer` コンポーネントは自動削除され、`*_LatticeBaked` 付きの新しいメッシュが生成されます。
+2. NDMF のビルド時に、有効な `Mesh Deformer` コンポーネントは自動削除され、`*_MeshDeformed` という名前のメッシュが生成されます。
 3. VRChat で検証する場合は、生成されたメッシュを含むアバターを `Build & Publish` し、インスタンス内で表示を確認します。
 
 ## 変形を組み立てる

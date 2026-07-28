@@ -9,7 +9,7 @@ Lattice Deformation Tool は、個々の変形を**レイヤー**に記録し、
 ## 概要
 
 ```
-LatticeDeformer コンポーネント
+Mesh Deformer コンポーネント
 ├── グループ 1 (Deformation Group)
 │   ├── レイヤー 1 [L] ラティスレイヤー
 │   ├── レイヤー 2 [B] ブラシレイヤー
