@@ -58,7 +58,7 @@ export const Icon = ({name, alt}) => (
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
 | Local Bounds | Local Bounds | ラティスケージのサイズを手動設定。通常はデフォルトで問題なし |
-| Interpolation | Interpolation | 補間方法。`Trilinear` (高速) / `Cubic Bernstein` (滑らか) |
+| Interpolation | Interpolation | 補間方法。`Trilinear` (高速) / `Cubic Bernstein` (滑らか)。1.4.2 の新規データは現行 Bernstein 評価、旧公開データは既存出力を維持する互換評価を使用 |
 
 ## Inspector: 左右操作
 
@@ -116,21 +116,25 @@ export const Icon = ({name, alt}) => (
 
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
-| ラティスケージ位置調整 | Lattice Cage Alignment | 編集用ケージの位置とスケール表示を調整 |
-| オフセット | Offset | ケージの表示位置を微調整 (表示のみ、変形には影響なし) |
+| ラティスケージ位置調整 | Lattice Cage Alignment | 編集用ケージの表示位置と表示スケールを調整 |
+| オフセット | Offset | ケージの表示位置をプロキシのローカル空間で微調整 |
+| スケール | Scale | ケージの表示スケールを軸ごとに微調整。リンクを有効にすると各軸を連動 |
+| (Debug) プレビューアラインをコンソールにログ出力 | (Debug) Log Preview Alignment to Console | ケージ位置の診断情報を Console へ出力 |
+
+`Offset` と `Scale` は Scene ビューの編集用ケージだけに適用され、メッシュのバウンズや最終的な変形結果には影響しません。SkinnedMeshRenderer では、ラティスケージの各制御点が現在のボーンポーズへ追従して表示されます。
 
 ## Inspector: エディターボタン
 
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
-| ラティスエディターを開く | Open Lattice Editor | Scene ビューで Lattice Tool をアクティブにする |
-| ブラシエディターを開く | Open Brush Editor | Scene ビューでブラシ/頂点選択ツールをアクティブにする |
+| ラティスエディターを開く | Open Lattice Editor | Scene ビューで `Mesh Deformer` ツールをアクティブにし、ラティス編集を表示 |
+| ブラシエディターを開く | Open Brush Editor | Scene ビューで `Mesh Deformer` ツールをアクティブにし、ブラシ/頂点選択編集を表示 |
 
 ---
 
-## Scene Overlay: Lattice Tool
+## Scene Overlay: Mesh Deformer
 
-ラティスレイヤー選択時に表示されるオーバーレイです。
+Scene ビューの変形編集は単一の `Mesh Deformer` EditorTool とオーバーレイで行います。アクティブレイヤーをオーバーレイ上部で選択でき、ラティスレイヤー `[L]` の選択中は次のラティス編集項目が表示されます。
 
 | | 日本語 UI 表示 | 英語表記 | 説明 |
 | :---: | --- | --- | --- |
@@ -151,7 +155,7 @@ export const Icon = ({name, alt}) => (
 
 ---
 
-## Scene Overlay: <Icon name="brush" /> ブラシツール
+## Mesh Deformer Overlay: <Icon name="brush" /> ブラシ編集
 
 ブラシレイヤー選択時に <Icon name="brush" /> `ブラシ` モードで表示されるオーバーレイです。
 
@@ -161,7 +165,6 @@ export const Icon = ({name, alt}) => (
 | <Icon name="normal" /> | └ 法線 | Normal | 法線方向に押し出し/引き込み |
 | <Icon name="move" /> | └ 移動 | Move | スクリーン方向に移動 |
 | <Icon name="smooth" /> | └ スムーズ | Smooth | 変形を平滑化 |
-| | └ マスク | Mask | 頂点の編集保護 |
 | | ブラシ半径 | Brush Radius | ブラシの影響範囲 |
 | | ブラシ強度 | Brush Strength | 変位量 (0〜1) |
 | | ブラシ減衰 | Brush Falloff | 減衰カーブの種類 |
@@ -169,9 +172,7 @@ export const Icon = ({name, alt}) => (
 | | **ミラー** | | |
 | <Icon name="mirror" /> | ミラーを有効化 | Enable Mirror | 対称ペイント |
 | | ミラー軸 | Mirror Axis | X / Y / Z |
-| | **マスク** | | |
-| <Icon name="clear" /> | マスクをクリア | Clear Mask | 全マスクをリセット |
-| <Icon name="clear" /> | すべてクリア | Clear All | 変位とマスクをすべて削除 |
+| <Icon name="clear" /> | すべてクリア | Clear All | ブラシレイヤーの変位をすべて削除 |
 | | **詳細設定** | **Advanced** | |
 | <Icon name="connected" /> | 接続のみ | Connected Only | 接続された頂点のみに影響 |
 | <Icon name="surface-distance" /> | 表面距離 | Surface Distance | メッシュ表面に沿った距離を使用 |
@@ -193,7 +194,7 @@ export const Icon = ({name, alt}) => (
 
 ---
 
-## Scene Overlay: <Icon name="vertex-select" /> 頂点選択ツール
+## Mesh Deformer Overlay: <Icon name="vertex-select" /> 頂点選択
 
 ブラシレイヤー選択時に <Icon name="vertex-select" /> `頂点選択` モードで表示されるオーバーレイです。
 
