@@ -26,7 +26,7 @@ lilToon では、陰影が 1st Shadow、2nd Shadow、3rd Shadow の AO として
 | 1st / 2nd / 3rd Shadow の Scale | それぞれの影レイヤーにどれくらい陰影を効かせるか |
 | 1st / 2nd / 3rd Shadow の Offset | 陰影の明るさの底上げ / 引き下げ |
 | Post AO | AO を適用した後に lilToon の `Border` 設定を無視する |
-| Border Mask LOD | AO マップのぼかし具合 (lilToon の Inspector と同じ意味) |
+| Border Mask LOD | AO マップのぼかし具合（lilToon の Inspector と同じ意味） |
 
 コンポーネントを追加した時点で、マテリアルの現在の設定値が自動的に読み込まれます。
 そのままで問題ないことがほとんどです。
@@ -45,8 +45,8 @@ Poiyomi では、AO の R、G、B、A チャンネルへ、それぞれ指定し
 
 | 項目 | 説明 |
 | --- | --- |
-| R Strength | R チャンネルに書き込む強度 (デフォルト `1.0`) |
-| G / B / A Strength | 他チャンネルに書き込む強度 (デフォルト `0.0`) |
+| R Strength | R チャンネルに書き込む強度（デフォルト `1.0`） |
+| G / B / A Strength | 他チャンネルに書き込む強度（デフォルト `0.0`） |
 
 **通常は R のみ `1.0` にしておけば OK です。
 ** 他のチャンネルは Poiyomi 側で別の用途に使っている場合のみ触ってください。
@@ -61,7 +61,7 @@ Poiyomi では、AO の R、G、B、A チャンネルへ、それぞれ指定し
 
 | 項目 | 説明 |
 | --- | --- |
-| Occlusion Strength | 陰影の強度 (デフォルト `1.0`) |
+| Occlusion Strength | 陰影の強度（デフォルト `1.0`） |
 
 ## VertexColor（頂点カラー）
 
@@ -77,7 +77,7 @@ Poiyomi では、AO の R、G、B、A チャンネルへ、それぞれ指定し
 
 お使いのシェーダーが自動判別されない場合は、以下のいずれかで対応してください。
 
-- 似た挙動のシェーダーを `対象シェーダー` から手動選択する (Occlusion Map を持つシェーダーなら `StandardLit`)
+- 似た挙動のシェーダーを `対象シェーダー` から手動選択する（Occlusion Map を持つシェーダーなら `StandardLit`）
 - `VertexColor` を選択する
 - [手動ベイク](./manual-bake.md) で PNG だけ書き出して、自分でマテリアルに割り当てる
 

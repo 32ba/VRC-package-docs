@@ -15,7 +15,7 @@ Lattice Deformation Tool では、変形結果を BlendShape（ShapeKey）とし
 ### 設定手順
 
 1. Inspector のグループ設定で `BlendShape 出力` を `OutputAsBlendShape` に変更します。
-2. `BlendShape 名` にメッシュに生成される BlendShape の名前を設定します (デフォルトで GameObject 名が入ります)。
+2. `BlendShape 名` にメッシュに生成される BlendShape の名前を設定します（デフォルトで GameObject 名が入ります）。
 3. `カーブ` でアニメーションカーブを編集し、0%〜100% の変化をカスタマイズできます。
 
 {/* BlendShape 出力設定の Inspector スクリーンショット。BlendShape 出力ドロップダウン、名前フィールド、カーブエディタが見える状態 */}
@@ -25,7 +25,7 @@ Lattice Deformation Tool では、変形結果を BlendShape（ShapeKey）とし
 
 | モード               | 説明                                                   |
 | -------------------- | ------------------------------------------------------ |
-| `Disabled`           | 通常の直接変形 (デフォルト)                            |
+| `Disabled`           | 通常の直接変形（デフォルト）                            |
 | `OutputAsBlendShape` | 変形結果をメッシュに直接適用せず BlendShape として出力 |
 
 ### カーブ

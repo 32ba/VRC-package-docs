@@ -14,7 +14,7 @@ export const Icon = ({name, alt}) => (
 
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
-| ツールの言語 | Tool Language | エディタ内で表示する言語を切り替えます。English / 日本語 / 한국어 / 简体中文 / 繁體中文 |
+| ツールの言語 | Tool Language | エディタ内で表示する言語を切り替えます。English、日本語、한국어、简体中文、繁體中文 |
 | ツールチップを表示 | Show Tooltips | UI 要素にカーソルを合わせたとき説明を表示します |
 | Skinned Mesh Source | Skinned Mesh Source | 変形対象の `Skinned Mesh Renderer`。同じ GameObject にある場合は自動設定 |
 | Static Mesh Source | Static Mesh Source | メッシュフィルターを持つ静的メッシュ用。Skinned Mesh Source が設定されている場合は無効 |
@@ -48,7 +48,7 @@ export const Icon = ({name, alt}) => (
 
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
-| 現在のグリッド分割数 | Current Grid Divisions | 各軸の分割数を `Vector3Int` 形式で表示 (読み取り専用) |
+| 現在のグリッド分割数 | Current Grid Divisions | 各軸の分割数を `Vector3Int` 形式で表示（読み取り専用） |
 | 変更後のグリッド分割数 | Pending Grid Divisions | 新しい分割数を入力。各軸 2 以上が必須 |
 | 適用 | Apply | 分割数を確定し制御点を再サンプリング |
 | 元に戻す | Revert | 入力した分割数を現在値に戻す |
@@ -59,7 +59,7 @@ export const Icon = ({name, alt}) => (
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
 | Local Bounds | Local Bounds | ラティスケージのサイズを手動設定。通常はデフォルトで問題なし |
-| Interpolation | Interpolation | 補間方法。`Trilinear` (高速) / `Cubic Bernstein` (滑らか)。1.4.2 の新規データは現行 Bernstein 評価、旧公開データは既存出力を維持する互換評価を使用 |
+| Interpolation | Interpolation | 補間方法は `Trilinear`（高速）または `Cubic Bernstein`（滑らか）で、1.4.2 の新規データには現行評価、旧公開データには既存出力を維持する互換評価を使用 |
 
 ## Inspector：左右操作
 
@@ -78,7 +78,7 @@ export const Icon = ({name, alt}) => (
 
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
-| BlendShape 出力 | BlendShape Output | `Disabled` (直接変形) / `OutputAsBlendShape` (BlendShape として出力) |
+| BlendShape 出力 | BlendShape Output | `Disabled`（直接変形） / `OutputAsBlendShape`（BlendShape として出力） |
 | BlendShape 名 | BlendShape Name | 生成される BlendShape の名前 |
 | カーブ | Curve | 0〜100% の変化を制御するアニメーションカーブ |
 | テストモードに入る | Enter Test Mode | BlendShape の効果をリアルタイムプレビュー |
@@ -91,10 +91,10 @@ export const Icon = ({name, alt}) => (
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
 | メッシュ再構築オプション | Mesh Rebuild Options | 変形後の再計算設定セクション |
-| 法線 | Normals | 変形後の法線を再計算 (デフォルト ON) |
+| 法線 | Normals | 変形後の法線を再計算（デフォルト ON） |
 | 接線 | Tangents | タンジェントを再計算。法線マップ使用時に有効化 |
 | 境界 | Bounds | バウンズを再計算 |
-| ボーンウェイトを再計算 | Recalculate Bone Weights | ボーンウェイトを変形に合わせて再計算 (SkinnedMeshRenderer のみ) |
+| ボーンウェイトを再計算 | Recalculate Bone Weights | ボーンウェイトを変形に合わせて再計算（SkinnedMeshRenderer のみ） |
 | (NDMF) Enable Lattice Preview | (NDMF) Enable Lattice Preview | プレビューの ON/OFF 切り替え |
 | (NDMF) Disable Lattice Preview | (NDMF) Disable Lattice Preview | プレビューを無効化 |
 
@@ -106,12 +106,12 @@ export const Icon = ({name, alt}) => (
 | --- | --- | --- |
 | ウェイト転写設定 | Weight Transfer Settings | ウェイト転送の設定セクション |
 | **Stage 1: 初期転写** | Stage 1: Initial Transfer | 元メッシュの近傍頂点からウェイトをコピー |
-| └ 最大転写距離 | Max Transfer Distance | メッシュバウンズ対角線に対する割合 (デフォルト: 0.05) |
-| └ 法線角度閾値 | Normal Angle Threshold | 法線角度差の上限 (デフォルト: 60°) |
+| └ 最大転写距離 | Max Transfer Distance | メッシュバウンズ対角線に対する割合（デフォルト: 0.05） |
+| └ 法線角度閾値 | Normal Angle Threshold | 法線角度差の上限（デフォルト: 60°） |
 | **Stage 2: ウェイト補間** | Stage 2: Weight Inpainting | 転写できなかった頂点を周囲から滑らかに補完 |
 | └ 補間を有効化 | Enable Inpainting | 補間の有効/無効 |
-| └ 最大反復回数 | Max Iterations | 反復回数の上限 (デフォルト: 1000) |
-| └ 収束判定閾値 | Tolerance | 収束の判定基準 (デフォルト: 1e-6) |
+| └ 最大反復回数 | Max Iterations | 反復回数の上限（デフォルト: 1000） |
+| └ 収束判定閾値 | Tolerance | 収束の判定基準（デフォルト: 1e-6） |
 
 ## Inspector：ラティスケージ位置調整
 
@@ -122,20 +122,24 @@ export const Icon = ({name, alt}) => (
 | スケール | Scale | ケージの表示スケールを軸ごとに微調整。リンクを有効にすると各軸を連動 |
 | (Debug) プレビューアラインをコンソールにログ出力 | (Debug) Log Preview Alignment to Console | ケージ位置の診断情報を Console へ出力 |
 
-`Offset` と `Scale` は Scene ビューの編集用ケージだけに適用され、メッシュのバウンズや最終的な変形結果には影響しません。SkinnedMeshRenderer では、ラティスケージの各制御点が現在のボーンポーズへ追従して表示されます。
+`Offset` と `Scale` は、Scene ビューの編集用ケージだけに適用されます。
+メッシュのバウンズと最終的な変形結果には影響しません。
+SkinnedMeshRenderer では、ラティスケージの各制御点が現在のボーンポーズへ追従して表示されます。
 
 ## Inspector：エディターボタン
 
 | 日本語 UI 表示 | 英語表記 | 説明 |
 | --- | --- | --- |
 | ラティスエディターを開く | Open Lattice Editor | Scene ビューで `Mesh Deformer` ツールをアクティブにし、ラティス編集を表示 |
-| ブラシエディターを開く | Open Brush Editor | Scene ビューで `Mesh Deformer` ツールをアクティブにし、ブラシ/頂点選択編集を表示 |
+| ブラシエディターを開く | Open Brush Editor | Scene ビューで `Mesh Deformer` ツールをアクティブにし、ブラシまたは頂点選択編集を表示 |
 
 ---
 
 ## Scene Overlay：Mesh Deformer
 
-Scene ビューの変形編集は単一の `Mesh Deformer` EditorTool とオーバーレイで行います。アクティブレイヤーをオーバーレイ上部で選択でき、ラティスレイヤー `[L]` の選択中は次のラティス編集項目が表示されます。
+Scene ビューの変形編集では、単一の `Mesh Deformer` EditorTool とオーバーレイを使います。
+オーバーレイ上部でアクティブレイヤーを選択すると、レイヤーに対応する編集項目へ切り替わります。
+ラティスレイヤー `[L]` では、次の項目が表示されます。
 
 | | 日本語 UI 表示 | 英語表記 | 説明 |
 | :---: | --- | --- | --- |
@@ -225,7 +229,7 @@ Scene ビューの変形編集は単一の `Mesh Deformer` EditorTool とオー�
 | 操作 | 挙動 |
 | --- | --- |
 | W / E / R | 移動 / 回転 / スケール切り替え |
-| Z | ピボットモード切り替え (中心 ↔ 最後に選択) |
+| Z | ピボットモード切り替え（中心 ↔ 最後に選択） |
 | Alt + スクロール | プロポーショナル半径を調整 |
 | Shift + ドラッグ | 精密モード |
 

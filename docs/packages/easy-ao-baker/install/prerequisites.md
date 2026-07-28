@@ -7,8 +7,8 @@ EasyAOBaker を使い始める前に、Unity と依存パッケージがそろ�
 
 ## 必要なもの
 
-- **Unity 2022.3 LTS**: VRChat Creator Companion (VCC) が案内する `Unity 2022.3.xf1 LTS` 系を使用します。
-- **NDMF 1.9.0 以上**: VPM から EasyAOBaker を入れると一緒に入るので、通常は意識する必要はありません。
+- **Unity 2022.3 LTS**：VRChat Creator Companion (VCC) が案内する `Unity 2022.3.xf1 LTS` 系を使用します。
+- **NDMF 1.9.0 以上**：VPM から EasyAOBaker を入れると一緒に入るので、通常は意識する必要はありません。
 
 ## 対応シェーダー
 
@@ -17,7 +17,7 @@ EasyAOBaker を使い始める前に、Unity と依存パッケージがそろ�
 - **lilToon**
 - **Poiyomi Toon**
 - **VRChat Toon Standard**
-- **Unity Standard / Sunao Shader** (その他 Occlusion Map を持つシェーダー)
+- **Unity Standard / Sunao Shader**（その他 Occlusion Map を持つシェーダー）
 
 上記以外のシェーダーでも、Inspector で書き込み先を手動で選択できます。
 
@@ -48,6 +48,8 @@ VCC の `Create New Project` から **VRChat SDK - Avatars** テンプレート�
 
 ## 他のツールとの併用について
 
-- **AAO (Avatar Optimizer) との併用**: 問題なく併用できます。EasyAOBaker は AAO がメッシュを最適化した「最終的な形」に対して陰影を焼き付けるため、AAO を通した後のアバターでもきれいに仕上がります。
-- **Modular Avatar など他の NDMF ツール**: 問題なく併用できます。
-- **複数のメッシュに陰影を入れたい**: Body, 髪, 服などそれぞれに `EasyAOBaker` を 1 つずつ追加します。それぞれのメッシュはアバター全体の形を考慮して陰影が計算されるので、例えば「髪の影が顔に落ちる」といった他メッシュからの遮蔽も自然に反映されます。
+- **AAO (Avatar Optimizer) との併用**：問題なく併用できます。
+  EasyAOBaker は AAO がメッシュを最適化した「最終的な形」に対して陰影を焼き付けるため、AAO を通した後のアバターでもきれいに仕上がります。
+- **Modular Avatar など他の NDMF ツール**：問題なく併用できます。
+- **複数のメッシュに陰影を入れたい**：Body, 髪, 服などそれぞれに `EasyAOBaker` を 1 つずつ追加します。
+  それぞれのメッシュはアバター全体の形を考慮して陰影が計算されるので、例えば「髪の影が顔に落ちる」といった他メッシュからの遮蔽も自然に反映されます。
